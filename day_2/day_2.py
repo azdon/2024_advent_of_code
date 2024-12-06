@@ -19,10 +19,10 @@ with open('input/input.txt', 'r') as file:
             if i == 0:
                 # Checking if inc or dec
                 if first_val > second_val:
-                    increasing = True
+                    decreasing = True
                 
                 elif first_val < second_val:
-                    decreasing = True
+                    increasing = True
                     
                 else:
                     safe = False
@@ -35,10 +35,10 @@ with open('input/input.txt', 'r') as file:
                     safe = False 
                 
                 # Checking if next breaks pattern
-                if decreasing and first_val > second_val:
+                if increasing and first_val > second_val:
                     safe = False
                 
-                if increasing and first_val < second_val:
+                if decreasing and first_val < second_val:
                     safe = False
                     
                 if abs(first_val - second_val) not in safe_limits:
